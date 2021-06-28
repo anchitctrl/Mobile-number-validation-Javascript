@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Mobile Number Validations in JS</title>
+        <link rel="stylesheet" href="MobileNumberValidation.css">
+        <script>
+        /*
+            \d match any digit (equal to [0-9])
+            \w match any word character(a-z,A-Z,0-9)
+            \s match whitespace character (space and tabs)
+            \t match a tab only
+        */
+       function validate(){
+           var text=document.getElementById("text1").value;
+           var regx=/^[7-9]\d{9}$/;
+
+           if(regx.test(text)){
+               document.getElementById("label").innerHTML="Valid";
+               document.getElementById("label").style.visibility="visible";
+               document.getElementById("label").style.color="green";
+           }
+           else{
+                document.getElementById("label").innerHTML="Invalid";
+                document.getElementById("label").style.visibility="visible";
+                document.getElementById("label").style.color="red";
+           }
+       }
+        </script>
+    </head>
+    <body>
+        <div class="todo-wrapper">
+            <form action="">
+                <input type="text" id="text1" placeholder="Cellphone"><br>
+                <label id="label" style="color: red; visibility: hidden;"> Invalid number</label><br>
+                <button id="pretty-button" onclick="validate()" type="button">Check Validity</button>
+            </form>
+        </div>
+    </body>
+</html>
